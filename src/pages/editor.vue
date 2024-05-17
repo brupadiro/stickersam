@@ -50,7 +50,7 @@
           </v-card-title>
           <v-card-text>
             <v-card flat tile>
-              <v-card-text v-if="tab=='upload'" class="d-flex align-center flex-column" @click="triggerFileInput">
+              <v-card-text v-if="tab=='upload'" class="d-flex align-center flex-column">
                 <img src="/icons/upload-dark.png" width="40">
                 <p>PDF, PNG, JPG, SVG</p>
                 <v-btn rounded flat color="yellow" @click="triggerFileInput">
