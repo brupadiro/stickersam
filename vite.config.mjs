@@ -23,6 +23,7 @@ export default defineConfig({
         configFile: 'src/styles/settings.scss',
       },
     }),
+    
     Components(),
     ViteFonts({
       google: {
@@ -33,7 +34,7 @@ export default defineConfig({
       },
     }),
   ],
-  define: { 'process.env': {} },
+  define: { 'process.env': {},Module: {}  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
