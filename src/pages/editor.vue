@@ -44,10 +44,10 @@
               <g :clip-path="'url(#clip-shape)'" >
                 <rect width="100%" height="100%" fill="url(#backgroundPattern)"  />
                 <image ref="image" v-if="imageUrl"  :xlink:href="imageUrl" :width="imageWidth" :height="imageHeight" :x="imagePosition.x"
-                  :y="imagePosition.y" @mousedown="startImageDrag" />
+                  :y="imagePosition.y" @mousedown="startImageDrag" @mouseup="stopImageDrag" />
               </g>
               <g v-if="stickerText">
-          <text ref="textElement" @click="showControls =true" mousedown="startTextDrag" :x="textPosition.left" :y="textPosition.top" :fill="textColor" :font-family="textFont" :font-size="textSize"
+          <text ref="textElement" @click="showControls =true" @mousedown="startTextDrag" @mouseup="stopTextDrag" :x="textPosition.left" :y="textPosition.top" :fill="textColor" :font-family="textFont" :font-size="textSize"
                 :transform="'rotate(' + textRotation + ',' + (textPosition.left + borderRect.width / 2) + ',' + (textPosition.top + borderRect.height / 2) + ')'">
             {{ stickerText }}
           </text>
@@ -58,11 +58,11 @@
               </g>
 
               <image :x="imagePosition.x + imageWidth - 10" :y="imagePosition.y + imageHeight - 10" width="30"
-                height="30" fill="red" cursor="se-resize" @mousedown="startImageResize"  xlink:href="/icons/resize.png" />
+                height="30" fill="red" cursor="se-resize" @mousedown="startImageResize" @mouseup="stopImageResize" xlink:href="/icons/resize.png" />
               <rect width="100%" height="100%" fill="none" stroke="white" stroke-dasharray="5,5" />
               <rect />
               <image  :x="canvasWidth - 30" :y="canvasHeight - 30" width="30" height="30"  cursor="se-resize"
-              @mousedown="startCanvasResize" xlink:href="/icons/resize.png" />
+              @mousedown="startCanvasResize" @mouseup="stopCanvasResize" xlink:href="/icons/resize.png" />
               </svg>
 </div>
           </div>
