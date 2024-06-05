@@ -12,6 +12,7 @@ import App from './App.vue'
 import * as cv from 'opencv.js'
 // Composables
 import { createApp } from 'vue'
+import './styles/style.scss' // Importa los estilos globales
 
 const app = createApp(App)
 app.config.globalProperties.$cv = cv
